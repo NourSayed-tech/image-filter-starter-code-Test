@@ -6,7 +6,7 @@ http://localhost:8082/filteredimage?image_url=https://upload.wikimedia.org/wikip
 
 Please find elasticbeanstalk endpoint:
 
-http://image-filter-starter-code2-dev2.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/e/e2/Public.jpg
+(http://image-filter-starter-code2-dev2.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://egy.gonnashop.com/ecdata/stores/CSTGS089/image/cache/data/6-500x500.jpg)
 
 Please use same photo or smaller
 

@@ -24,18 +24,18 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   //    4. deletes any files on the server on finish of the response
   // QUERY PARAMATERS
 
-  type test = {
+    type obj = {
   [key: string]: any;
-};
+    };
 
-    app.get("/filteredimage", async (req, res) => {
-        let {image_url}: test = req.query;
+    app.get("/filteredimage/", async (req: express.Request, res: express.Response) => {
+        let { image_url }: obj = req.query;
         console.log(image_url);
-            const isValideUrl: string = image_url.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+        const isValideUrl = image_url.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
         if (isValideUrl == null)
             return res.status(400).send(`Inavlid url! Try again with valid url`);
         else {
-            const filteredImage: string = await filterImageFromURL(image_url);
+            const filteredImage = await filterImageFromURL(image_url);
             if (filteredImage === undefined || filteredImage === null)
                 return res.status(400).send(`Unable to filter image`);
             else
